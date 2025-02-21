@@ -1,67 +1,87 @@
-Excel Clipboard Logger
+# Dynamic Excel Logger
 
-Overview
+## Overview
 
-This script captures clipboard content and logs it into separate Excel files based on the selected category. The user can press designated keyboard shortcuts to save the clipboard content under the appropriate category.
+- This Python script allows users to dynamically log clipboard content into Excel files. Users can define multiple categories, assign hotkeys, and select file paths to store their data.
 
-Features
+## Features
 
-Automatically creates and manages three separate Excel files: leads.xlsx, potential.xlsx, and no_response.xlsx.
+- Dynamic File and Column Management: Users can assign different Excel files and column names.
 
-Logs data with a timestamp.
+- Custom Hotkey Assignments: Any key combination (e.g., alt+j) can be mapped to log clipboard content.
 
-Hotkey-based categorization:
+- Graphical User Interface (GUI): Users can add new files and hotkeys on demand.
 
-Alt+J: Save clipboard content to leads.xlsx.
+- Multi-threaded Execution: The script runs a background listener while keeping the GUI active.
 
-Alt+K: Save clipboard content to potential.xlsx.
+- Timestamped Entries: Each log entry includes the date and time.
 
-Alt+L: Save clipboard content to no_response.xlsx.
+## Requirements
 
-Runs continuously in the background.
+```
+ Python 3.x
+```
 
-Requirements
+## Required Python libraries:
 
-Python 3.x
+```
+- pandas
 
-Required Python libraries:
+- keyboard
 
-pandas
+- pyperclip
 
-keyboard
+- openpyxl
 
-pyperclip
+- tkinter
+```
 
-openpyxl
+## To install dependencies, run:
 
-To install dependencies, run:
+- pip install pandas keyboard pyperclip openpyxl
 
-pip install pandas keyboard pyperclip openpyxl
+## How to Use
 
-How to Use
+#### Run the script:
 
-Run the script:
+- python script.py
 
-python script.py
+#### Set up logging:
 
-Copy the desired text to the clipboard.
+- Enter a column name.
 
-Press the appropriate hotkey (Alt+J, Alt+K, or Alt+L) to save the content to the respective Excel file.
+- Select an Excel file to store the data.
 
-The script runs in the background and continues to listen for clipboard content until manually stopped.
+- Assign a hotkey (e.g., alt+j).
 
-Stopping the Script
+#### Log clipboard content:
 
-To stop execution, use Ctrl+C in the terminal.
+- Copy text to the clipboard.
 
-Notes
+- Press the assigned hotkey to store it in the selected Excel file.
 
-Ensure you have the required dependencies installed.
+#### Add more categories:
 
-Excel files will be created automatically if they do not exist.
+- The GUI remains open so users can add more categories and hotkeys.
 
-The script maintains a timestamp for each entry in the Excel files.
+- Exit:
 
-License
+- Click the Close button to exit the GUI, but the background logging will continue.
 
-This project is open-source and free to use.
+### Stopping the Script
+
+```
+ To stop execution, use Ctrl+C in the terminal.
+```
+
+#### Notes
+
+- Ensure you have the required dependencies installed.
+
+- Excel files will be created automatically if they do not exist.
+
+- The script maintains a timestamp for each entry in the Excel files.
+
+### License
+
+- This project is open-source and free to use.
